@@ -5,7 +5,7 @@ myapp.controller('myCtrl', function($scope, $http) {
     $http.get("https://bernardbdas.github.io/wsd-lab8/users.json")
         .success(function(response) {
             $scope.myData = response.users;
-            $scope.rowlimit = response.users.length();
+            console.log($scope.myData);
         });
     //$scope.myOrderBy = item;
 });

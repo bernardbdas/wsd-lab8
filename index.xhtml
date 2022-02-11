@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
     <!--linking javascript files-->
+    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
     <script type="javascript" src="script.js"></script>
-    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
-<body ng-controller="myctrl">
+<body ng-controller="myCtrl">
     <h2 class="header">Search User Database</h2>
     <div class="conatiner" ng-controller="myCtrl">
         <br /> <br /> <label>Rows to Display :</label> <br /> <input class="filter" type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder="Number of rows to be displayed" />
@@ -55,7 +56,7 @@
                     <td>{{item.cid}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.age}}</td>
-                    <td>{{item.nationality}</td>
+                    <td>{{item.nationality}}</td>
                     <td>{{item.designation}}</td>
                     <td>{{item.email}}</td>
                     <td>{{item.contact}}</td>
