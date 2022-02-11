@@ -1,10 +1,11 @@
-<html>
+<html ng-app="myApp">
 
 <head>
     <title>CDPL:user database</title>
-    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <link rel="stylesheet" type="css" href="style1.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="javascript" src=" script.js"></script>
 </head>
 
 <body ng-controller="user-ctrl">
@@ -50,7 +51,7 @@
             </tr>
 
             <tbody>
-                <tr ng-repeat="item in names | limitTo:rowlimit | filter:search | orderBy:myOrderBy">
+                <tr ng-repeat="item in myData | limitTo:rowlimit | filter:search | orderBy:myOrderBy">
                     <td>{{item.cid}}</td>
                     <td>{{item.name|namefilter:search}}</td>
                     <td>{{item.age}}</td>
@@ -62,7 +63,6 @@
             </tbody>
         </table>
     </div>
-    <script type="javascript" src=" script.js"></script>
 </body>
 
 </html>
