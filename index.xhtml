@@ -19,40 +19,33 @@
 <body ng-controller="myctrl">
     <h2 class="header">Search User Database</h2>
     <div class="conatiner" ng-controller="myCtrl">
-        <br /> <br /> <label>Rows to Display :</label>> <br /> <input type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder="Number of rows to be displayed" />
-        <br /> <br /><label> Enter Name : </label><br /> <input type="text" placeholder="Search by user name" ng-model="search" />
-        <br /> <br /><label> Enter Number : </label><br /> <input type="text" placeholder="Search by user ID" ng-model="limit" />
+        <br /> <br /> <label>Rows to Display :</label> <br /> <input class="filter" type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder="Number of rows to be displayed" />
+        <br /> <br /><label> Enter Name : </label><br /> <input class="filter" type="text" placeholder="Search by user name" ng-model="searchName" />
+        <br /> <br /><label> Enter User ID : </label><br /> <input class="filter" type="text" placeholder="Search by user ID" ng-model="searchId" />
         <br />
         <br />
         <h2 class="header">CDPL : User Database</h2>
         <table cellpadding="2" cellspacing="2" borders="1">
             <tr>
-                <th scope="col" ng-click="orderByall('cid')">User Id
-                    <br />
+                <th scope="col" ng-click="orderByall('cid')">User Id <br />
                     <input type="text" ng-model="search.cid" />
                 </th>
-                <th scope="col" ng-click="orderByall('name')">Name
-                    <br />
+                <th scope="col" ng-click="orderByall('name')">Name <br />
                     <input type="text" ng-model="search.name" />
                 </th>
-                <th scope="col" ng-click="orderByall('age')">Age
-                    <br />
+                <th scope="col" ng-click="orderByall('age')">Age <br />
                     <input type="text" ng-model="search.age" />
                 </th>
-                <th scope="col" ng-click="orderByall('nationality')">Nationality
-                    <br />
+                <th scope="col" ng-click="orderByall('nationality')">Nationality <br />
                     <input type="text" ng-model="search.nationality" />
                 </th>
-                <th scope="col" ng-click="orderByall('designation')">Designation
-                    <br />
+                <th scope="col" ng-click="orderByall('designation')">Designation <br />
                     <input type="text" ng-model="search.designation" />
                 </th>
-                <th scope="col" ng-click="orderByall('email')">Email
-                    <br />
+                <th scope="col" ng-click="orderByall('email')">Email <br />
                     <input type="text" ng-model="search.email" />
                 </th>
-                <th scope="col" ng-click="orderByall('contact')">Contact
-                    <br />
+                <th scope="col" ng-click="orderByall('contact')">Contact <br />
                     <input type="text" ng-model="search.contact" />
                 </th>
             </tr>
@@ -60,16 +53,17 @@
             <tbody>
                 <tr ng-repeat="item in myData | limitTo:rowlimit | filter:search | orderBy:myOrderBy">
                     <td>{{item.cid}}</td>
-                    <td>{{item.name|namefilter:search}}</td>
+                    <td>{{item.name}}</td>
                     <td>{{item.age}}</td>
                     <td>{{item.nationality}</td>
                     <td>{{item.designation}}</td>
-                    <td>{{item.email|lowercase}}</td>
-                    <td>{{item.contact|phnfilter}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.contact}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <button onclick="hw()">Click me!</button>
 </body>
 
 </html>

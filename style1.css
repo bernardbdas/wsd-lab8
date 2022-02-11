@@ -92,6 +92,10 @@ input {
     font-family: var(--txt-font);
 }
 
+.filter {
+    width: 50%;
+}
+
 .sub-btn {
     font-family: var(--btn-font);
     border-radius: 7px;
@@ -123,6 +127,6 @@ tr:nth-child(even) {
 }
 
 th {
-    background-color: #191147;
+    background-color: #420044;
     color: white;
 }

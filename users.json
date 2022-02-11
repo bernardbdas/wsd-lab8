@@ -1,5 +1,5 @@
 {
-    "user": [{
+    "users": [{
             "cid": "C01",
             "name": "Person A",
             "age": "23",
