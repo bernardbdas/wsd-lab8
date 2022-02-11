@@ -20,8 +20,8 @@
     <h2 class="header">Search User Database</h2>
     <div class="conatiner" ng-controller="myCtrl">
         <br /> <br /> <label>Rows to Display :</label> <br /> <input class="filter" type="number" step="1" min="0" max="6" ng-model="rowlimit" placeholder="Number of rows to be displayed" />
-        <br /> <br /><label> Enter Name : </label><br /> <input class="filter" type="text" placeholder="Search by user name" ng-model="searchName" />
-        <br /> <br /><label> Enter User ID : </label><br /> <input class="filter" type="text" placeholder="Search by user ID" ng-model="searchId" />
+        <br /> <br /><label> Enter Name : </label><br /> <input class="filter" type="text" placeholder="Search by user name" ng-model="search" />
+        <br /> <br /><label> Enter User ID : </label><br /> <input class="filter" type="text" placeholder="Search by user ID" ng-model="search" />
         <br />
         <br />
         <h2 class="header">CDPL : User Database</h2>
@@ -52,17 +52,19 @@
 
             <tbody>
                 <tr ng-repeat="item in myData | limitTo:rowlimit | filter:search | orderBy:myOrderBy">
-                    <td>{{item.cid}}</td>
-                    <td>{{item.name}}</td>
+                    <td>{{item.cid | limitRow:limit}}</td>
+                    <td>{{item.name | formatName:search}}</td>
                     <td>{{item.age}}</td>
-                    <td>{{item.nationality}</td>
+                    <td>{{item.nationality | uppercase}</td>
                     <td>{{item.designation}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.contact}}</td>
+                    <td>{{item.email | lowercase}}</td>
+                    <td>{{item.contact | formatNum}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <br />
+    <br />
     <button onclick="hw()">Click me!</button>
 </body>
 
