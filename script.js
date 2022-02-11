@@ -1,29 +1,16 @@
-var myapp = angular.module('myapp', []);
-myapp.controller('myCtrl', function($scope, $http) {
-    $http.get("https://shubhajyotsna.github.io/Jason/customer.json")
-        .success(function(response) {
-
-            {
-                $scope.names = response.customer;
-            }
-
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("https://bernardbdas.github.io/wsd-lab8/users.json")
+        .then(function(response) {
+            $scope.myData = response.data.user;
+            $scope.rowlimit = response.data.length();
         });
-    $scope.orderByall = function(item) {
-        $scope.myOrderBy = item;
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
     }
-
 });
-myapp.filter("myfilter", function() {
+app.filter('myfilter', function() {
     return function(input) {
-        return input.substring(0, 1).toUpperCase() + input.substring(1);
+        return "+91-" + input;
     }
 });
-myapp.filter("myfilterid", function() {
-    return function(input, option) {
-        if (isNaN(option) || (option == "")) {
-            return input;
-        } else {
-            return input.substring(0, option).toLowerCase();
-        }
-    }
-})
