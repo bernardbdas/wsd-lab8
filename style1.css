@@ -1,31 +1,81 @@
-body{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&family=Julius+Sans+One&family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/*td{
-    border: 1px solid red;
-    padding: 5px;
+
+
+/*defining-variables*/
+
+:root {
+    --head-font: 'Headland One', serif;
+    --btn-font: 'Julius Sans One', sans-serif;
+    --txt-font: 'Montserrat', sans-serif;
+    --bg-img: url('..//img/form-bg-img1.jpg');
+    --grad1: linear-gradient(to left, rgba(124, 201, 23, 0.6), rgba(15, 193, 216, 0.6));
+    --grad2: linear-gradient(to left, rgba(250, 118, 42, 0.7), rgba(87, 108, 202, 0.6));
+    --grad2: linear-gradient(to left, #ff1e1eb3, rgba(87, 108, 202, 0.6));
 }
-th{
-    border: 1px solid red;
-    padding: 5px;
-    text-align: left;
-}*/
-td,th{
+
+body .color-overlay {
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+body {
+    background-color: var(--grad1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e9967a;
+    position: relative;
+}
+
+.color-overlay {
+    background: #102d4b;
+    background-attachment: fixed;
+    opacity: 0.7;
+    top: 0;
+    bottom: 100%;
+    position: fixed;
+}
+
+
+/*css-for-header*/
+
+.header {
+    font-family: var(--head-font);
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+td,
+th {
     border: 1px solid black;
     font-size: 18px;
 }
-table{
+
+table {
     border-collapse: collapse;
     width: 100%;
 }
-td{
+
+td {
     text-align: center;
-    
 }
-tr:hover{
-    background-color: rgb(250,247,85);
+
+tr:hover {
+    background-color: rgb(250, 247, 85);
 }
+
 tr:nth-child(even) {
     background-color: #7ce2af
 }
@@ -36,23 +86,23 @@ th {
     text-align: center;
     font-size: 18px;
 }
-label{
-	font-family: sans-serif;
-	font-size: 18px;
-	font-style: italic;
-	
+
+label {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: italic;
 }
 
-input{
-	width: 300px;
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	outline: 0;
-	padding: 7px;
-	background-color: #fff;
-	box-shadow: inset 1px 1px 5px
-	rgba(0,0,0,0.3);
+input {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
-div{
+
+div {
     margin: 40px;
 }
