@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>CDPL:user database</title>
+    <link rel="stylesheet" type="css" href="style1.css" />
+    <script type="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script type="javascript" src=" script.js "></script>
+</head>
+
+<body ng-controller="user-ctrl ">
+    <h2>Search User Database</h2>
+    <div class="color-overlay "></div>
+    <div ng-controller="myCtrl ">
+        Rows to Display : <input type="number " step="1 " min="0 " max="6 " ng-model="rowlimit " placeholder="Number of rows to be displayed " />
+        <br/> Enter Name : <input type="text " placeholder="Search Customer " ng-model="search ">
+        <br/> Enter Number : <input type="text " placeholder="Search CustomerId " ng-model="limit " />
+        <br/>
+        <br/>
+        <h2 style="text-align: center; ">Customer Details</h2>
+        <table cellpadding="2 " cellspacing="2 " borders="1 ">
+            <tr>
+                <th scope="col " ng-click="orderByall( 'Cid') ">CustomerId
+                    <br>
+                    <input type="text " ng-model="search.Cid ">
+                </th>
+                <th scope="col " ng-click="orderByall( 'fname') ">Fname
+                    <br>
+                    <input type="text " ng-model="search.fname ">
+                </th>
+                <th scope="col " ng-click="orderByall( 'lname') ">Lname
+                    <br>
+                    <input type="text " ng-model="search.lname ">
+                </th>
+                <th scope="col " ng-click="orderByall( 'gender') ">Gender
+                    <br>
+                    <input type="text " ng-model="search.gender ">
+                </th>
+                <th scope="col " ng-click="orderByall( 'phone') ">Phone
+                    <br>
+                    <input type="text " ng-model="search.phone ">
+                </th>
+            </tr>
+
+            <tbody>
+                <tr ng-repeat="item in names| limitTo:rowlimit |filter:search| orderBy:myOrderBy ">
+                    <td>{{item.Cid| myfilterid:limit}}</td>
+                    <td>{{item.fname| myfilter:search}}</td>
+                    <td>{{item.lname|uppercase}}</td>
+                    <td>{{item.gender|lowercase}}</td>
+                    <td>{{item.phone}}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        var mainApp = angular.module("mainApp ", []);
+
+        mainApp.controller('studentController', function($scope) {
+            $scope.student = {
+                firstName: "Mahesh ",
+                lastName: "Parashar ",
+                fees: 500,
+
+                subjects: [{
+                    name: 'Physics',
+                    marks: 70
+                }, {
+                    name: 'Chemistry',
+                    marks: 80
+                }, {
+                    name: 'Math',
+                    marks: 65
+                }],
+                fullName: function() {
+                    var studentObject;
+                    studentObject = $scope.student;
+                    return studentObject.firstName + " " + studentObject.lastName;
+                }
+            };
+        });
+    </script>
+
+</body>
+
+</html>
