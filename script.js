@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 //to fetch data from json file
 app.controller('myCtrl', function($scope, $http) {
     $http.get("https://bernardbdas.github.io/wsd-lab8/users.json")
-        .then(function(response) {
+        .success(function(response) {
             $scope.myData = response.data.user;
             $scope.rowlimit = response.data.length();
         });
@@ -18,7 +18,7 @@ app.filter('phnfilter', function() {
 });
 
 //custom filter 2
-myapp.filter("namefilter", function() {
+app.filter("namefilter", function() {
     return function(input) {
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
