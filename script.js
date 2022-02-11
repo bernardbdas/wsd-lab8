@@ -7,23 +7,34 @@ myapp.controller('myCtrl', function($scope, $http) {
             $scope.myData = response.users;
             console.log($scope.myData);
         });
-    //$scope.myOrderBy = item;
+    $scope.myOrderBy = item;
 });
 
-//custom filter 1
-myapp.filter('phnfilter', function() {
-    return function(input) {
-        return "+91-" + input;
-    }
-});
-
-//custom filter 2
-myapp.filter("namefilter", function() {
+//custom filter 1 : Makes the first char of the name capital
+myapp.filter('formatName', function() {
     return function(input) {
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 });
 
+//custom filter 2 : Limits the no. of rows displayed
+myapp.filter("limitRow", function() {
+    return function(input, option) {
+        if (isNaN(option) || (option == "")) {
+            return input;
+        } else {
+            return input.substring(0, option).toLowerCase();
+        }
+    }
+});
+
+//custom filter 3 : Adds country code "+91-" before every phone number
+app.filter('formatNum', function() {
+    return function(input) {
+        return "+91-" + input;
+    }
+});
+
 function hw() {
-    alert("to check whether the script file is linking properly!");
+    alert("just an alertbox to check whether the script file is linking properly.");
 }
