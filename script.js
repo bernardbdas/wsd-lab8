@@ -5,9 +5,8 @@ myapp.controller('myCtrl', function($scope, $http) {
     $http.get("https://bernardbdas.github.io/wsd-lab8/users.json")
         .success(function(response) {
             $scope.myData = response.users;
-            $scope.rowlimit = response.users.length();
+            console.log($scope.myData);
         });
-    $scope.myOrderBy = item;
 });
 
 //custom filter 1 : Makes the first char of the name capital
@@ -29,7 +28,7 @@ myapp.filter("limitRow", function() {
 });
 
 //custom filter 3 : Adds country code "+91-" before every phone number
-app.filter('formatNum', function() {
+myapp.filter('formatNum', function() {
     return function(input) {
         return "+91-" + input;
     }
