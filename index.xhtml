@@ -52,7 +52,7 @@
             </tr>
 
             <tbody>
-                <tr ng-repeat="item in myData | limitTo:rowlimit | filter:search | orderBy:myOrderBy">
+                <tr ng-repeat="item in myData | limitTo:rowlimit | filter:search | orderBy:myOrderBy |  filter:searchName | filter:searchId">
                     <td>{{item.cid}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.age}}</td>

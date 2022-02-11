@@ -7,7 +7,6 @@ myapp.controller('myCtrl', function($scope, $http) {
             $scope.myData = response.users;
             console.log($scope.myData);
         });
-    $scope.myOrderBy = item;
 });
 
 //custom filter 1 : Makes the first char of the name capital
@@ -29,7 +28,7 @@ myapp.filter("limitRow", function() {
 });
 
 //custom filter 3 : Adds country code "+91-" before every phone number
-app.filter('formatNum', function() {
+myapp.filter('formatNum', function() {
     return function(input) {
         return "+91-" + input;
     }
