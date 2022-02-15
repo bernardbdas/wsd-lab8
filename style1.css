@@ -106,6 +106,24 @@ input {
     margin: 22px 20px;
 }
 
+.ord-btn {
+    font-family: var(--btn-font);
+    border-radius: 7px;
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    margin: 22px 20px;
+    background-color: #11ffff;
+}
+
+.ord-btn:hover {
+    background-color: #acff11;
+}
+
+.ord-btn:active {
+    background-color: #ffac11;
+}
+
 td,
 th {
     border: 1px solid black;
