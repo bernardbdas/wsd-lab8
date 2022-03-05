@@ -2,7 +2,7 @@ var myapp = angular.module('myApp', []);
 
 //to fetch data from json file
 myapp.controller('myCtrl', function($scope, $http) {
-    $http.get("https://bernardbdas.github.io/wsd-lab8/users.json")
+    $http.get("https://bernardbdas.github.io/wsd-lab9/users.json")
         .success(function(response) {
             $scope.myData = response.users;
             console.log($scope.myData);
